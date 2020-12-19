@@ -3,20 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript
-    </title>
+    <link rel="stylesheet" href="css/index.css">
+    <title>Javascript</title>
 </head>
 <body>
     <div class="container">
         <h2>Challenge-1 Your Age In Days</h2>
-        <div>
+        <div class="flex-box-container">
             <div class="button1">
-                <button>Click me</button>
+                <button onclick="ageInDays()">Click me</button>
             </div>
             <div class="button2">
-                <div>reset</div>
+                <button onclick="reset()">reset</button>
             </div>
         </div>
+        <div class="result">
+            <div id="flex-box-result"></div>
+        </div>
     </div>
+
+    <script>
+  
+
+    function ageInDays() {
+        var age = prompt("What is your birth year...good friend?");
+        //2020-age * 365
+        var ageInDays = (2020-age)*365;
+        var h1 = document.createElement("h1");
+        var textAnswer = document.createTextNode("You are " + ageInDays + " days old.");
+        h1.setAttribute("id", "ageInDays");
+        h1.appendChild(textAnswer);
+        document.getElementById('flex-box-result').appendChild(h1);
+    }
+
+    function reset() {
+        document.getElementById("ageInDays").remove();
+    }
+    </script>
 </body>
 </html>
